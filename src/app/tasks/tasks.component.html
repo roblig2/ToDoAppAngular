@@ -1,0 +1,10 @@
+<app-add-task></app-add-task>
+<div *ngIf="tasksList.length==0" class="message">{{noTasksFound}}</div>
+    <mat-card class="card" *ngFor="let task of tasksList; let i = index">
+        <mat-card-content>
+            {{i+1}}   {{task.name}}  {{task.finished ? "Zrobione":"Nie zrobione"}}
+        </mat-card-content>
+        <button mat-flat-button color="warn" (click)="deleteTask(task.id)">Usuń</button>
+        <button mat-flat-button class="success" (click)="completeTask(task)">Zrobione</button>
+        <button mat-flat-button color="primary" (click)="editTask(task)">Edytuj</button>
+    </mat-card>

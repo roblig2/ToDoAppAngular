@@ -1,0 +1,11 @@
+<div class="edit-container">
+<div *ngIf="errorMessage" id="error-message">{{errorMessage}}</div>
+<form [formGroup]="formGroup" (submit)="saveTask()">
+    <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Podaj nazwę zadania</mat-label>
+        <input matInput formControlName="name" class="form-control" id="name" name="name" [(ngModel)]="name" required>
+    </mat-form-field>
+    <button mat-flat-button color="warn">Zapisz</button>
+</form>
+</div>
+

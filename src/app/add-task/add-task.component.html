@@ -1,0 +1,8 @@
+<div *ngIf="errorMessage" id="error-message">{{errorMessage}}</div>
+<form [formGroup]="formGroup" (submit)="submit()">
+    <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Podaj nazwę zadania do wykonania</mat-label>
+        <input matInput formControlName="name" class="form-control" id="name" name="name" required>
+    </mat-form-field>
+    <button mat-flat-button class="submit-button" color="primary" type="submit">Wyślij</button>
+</form>
